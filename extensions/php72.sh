@@ -49,7 +49,7 @@ fi
 if [ -z "${EXTENSIONS##*,redis,*}" ]; then
     echo "---------- Install redis ----------"
     mkdir redis \
-    && tar -xf redis-4.1.1.tgz -C redis --strip-components=1 \
+    && tar -xf redis-5.0.1.tgz -C redis --strip-components=1 \
     && ( cd redis && phpize && ./configure && make ${MC} && make install ) \
     && docker-php-ext-enable redis
 fi
@@ -66,7 +66,7 @@ fi
 if [ -z "${EXTENSIONS##*,xdebug,*}" ]; then
     echo "---------- Install xdebug ----------"
     mkdir xdebug \
-    && tar -xf xdebug-2.6.1.tgz -C xdebug --strip-components=1 \
+    && tar -xf xdebug-2.7.2.tgz -C xdebug --strip-components=1 \
     && ( cd xdebug && phpize && ./configure && make ${MC} && make install ) \
     && docker-php-ext-enable xdebug
 fi
@@ -75,7 +75,7 @@ fi
 if [ -z "${EXTENSIONS##*,swoole,*}" ]; then
     echo "---------- Install swoole ----------"
     mkdir swoole \
-    && tar -xf swoole-4.2.1.tgz -C swoole --strip-components=1 \
+    && tar -xf swoole-4.3.6.tgz -C swoole --strip-components=1 \
     && ( cd swoole && phpize && ./configure --enable-openssl && make ${MC} && make install ) \
     && docker-php-ext-enable swoole
 fi
