@@ -1,5 +1,7 @@
 .idea
 .DS_Store
+*.code-workspace
+.vscode/
 .env
 nohup.out
 docker-compose.yml
